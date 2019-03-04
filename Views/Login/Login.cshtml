@@ -1,0 +1,35 @@
+﻿@model StudyAbroad.Models.Userdetail
+@{
+    ViewBag.Title = "Login";
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title> Login </title>
+
+    <link href="~/LoginpageCSS/style.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    @Html.BeginForm("Autherize", "Login", FormMethod.Post)
+    {
+    <div class="box">
+
+
+
+        <h1>Login</h1>
+    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @type = "text", @value = "UserName", @placeholder = "UserName" } })
+    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type = "password", @value = "Password", @placeholder = "Password" } })
+
+        <input type="submit" name="" value="Login">
+
+        <a href="@Url.Action("Register","Login")">Register Here</a>
+    </div>
+
+    }
+</body>
+</html>
+
+

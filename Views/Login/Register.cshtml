@@ -1,0 +1,72 @@
+﻿@model StudyAbroad.Models.Userdetail
+@{
+    ViewBag.Title = "Register";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    
+    <link href="~/RegisterCSS/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset=md-1">
+                <div class="row">
+                    <div class="col-md-5 register-left">
+
+                        <img src="~/RegisterCSS/a.png" />
+                        <h3>Join Us</h3>
+                        <p>Subscriibe</p>
+                        <button type="button" class="btn btn-primary">About Us</button>
+
+                    </div>
+                    <div class="col-md-7 register-right">
+    <h2>Register Here</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+                <div class="form-group">
+        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Name" } })
+                </div>
+    <div class="form-group">
+
+        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @placeholder = "UserName" } })
+    </div>
+        <div class="form-group">
+
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
+        </div>
+
+        <div class="form-group">
+
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Password", @type = "password" } })
+
+        </div>
+
+
+        <div class="form-group">
+            <button type="submit" value="Create">Register</button>
+
+        </div>
+
+
+
+
+    }
+
+        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
